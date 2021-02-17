@@ -1,7 +1,5 @@
 table 50229 "Oel"
 {
-    DataClassification = ToBeClassified;
-
     fields
     {
         field(1; No; Code[20])
@@ -49,25 +47,4 @@ table 50229 "Oel"
             Clustered = true;
         }
     }
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 }

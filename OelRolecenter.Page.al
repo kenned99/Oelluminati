@@ -14,7 +14,6 @@ page 50226 "OelRolecenter"
                 {
                     ApplicationArea = All;
                 }
-
             }
         }
     }

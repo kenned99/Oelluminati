@@ -9,11 +9,19 @@ page 50227 "OelRolecenterActivities"
     {
         area(Content)
         {
-            group(GroupName)
+            group(Groups)
             {
-                field("key"; "key")
+                cuegroup(general)
                 {
-                    ApplicationArea = All;
+                    field("key"; "key")
+                    {
+                        ApplicationArea = All;
+                    }
+                    field("oel Header"; "oel Header")
+                    {
+                        ApplicationArea = All;
+                        DrillDownPageId = "Oel Header List";
+                    }
                 }
             }
         }
