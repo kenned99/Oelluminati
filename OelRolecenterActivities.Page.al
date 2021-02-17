@@ -13,14 +13,15 @@ page 50227 "OelRolecenterActivities"
             {
                 cuegroup(general)
                 {
-                    field("key"; "key")
-                    {
-                        ApplicationArea = All;
-                    }
                     field("oel Header"; "oel Header")
                     {
                         ApplicationArea = All;
                         DrillDownPageId = "Oel Header List";
+                    }
+                    field("Oel Line"; "Oel Line")
+                    {
+                        ApplicationArea = all;
+                        DrillDownPageId = "oel line list";
                     }
                 }
             }

@@ -6,7 +6,7 @@ page 50232 "Oel Subform"
     SourceTable = "Oel line";
     CaptionML = ENU = 'Lines', DAN = 'Linjer';
     DelayedInsert = true;
-    // MultipleNewLines = true;
+    MultipleNewLines = true;
     AutoSplitKey = true;
     LinksAllowed = false;
     Editable = true;
@@ -16,17 +16,21 @@ page 50232 "Oel Subform"
     {
         area(Content)
         {
-            group(GroupName)
+            repeater(tæst)
             {
                 field("Line No."; Rec."Line No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Line Amount"; Rec."Line Amount")
+                field("Oel No."; "Oel No.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = all;
                 }
-                field("Line Sum"; Rec."Line Sum")
+                field("Oel Title"; "Oel Title")
+                {
+                    ApplicationArea = all;
+                }
+                field("Price (LCY)"; Rec."Price (LCY)")
                 {
                     ApplicationArea = All;
                 }
@@ -34,11 +38,7 @@ page 50232 "Oel Subform"
                 {
                     ApplicationArea = All;
                 }
-                field("Price (LCY)"; Rec."Price (LCY)")
-                {
-                    ApplicationArea = All;
-                }
-                field(Matrix; Rec.Matrix)
+                field("Line Sum"; Rec."Line Sum")
                 {
                     ApplicationArea = All;
                 }

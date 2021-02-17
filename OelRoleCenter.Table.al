@@ -12,6 +12,11 @@ table 50226 "OelRoleCenter"
             FieldClass = FlowField;
             CalcFormula = count("Oel Header");
         }
+        field(3; "Oel Line"; Integer)
+        {
+            FieldClass = FlowField;
+            CalcFormula = count("Oel Line");
+        }
     }
     keys
     {

@@ -4,6 +4,7 @@ table 50230 "Oel line"
     {
         field(1; "Document no"; code[20])
         {
+            TableRelation = "Oel Header"."No.";
         }
         field(2; "Line No."; Integer)
         {

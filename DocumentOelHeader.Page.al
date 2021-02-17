@@ -7,8 +7,6 @@ page 50231 "Document Oel Header"
     RefreshOnActivate = true;
     SourceTable = "Oel Header";
     Editable = true;
-
-
     layout
     {
         area(Content)
@@ -76,12 +74,27 @@ page 50231 "Document Oel Header"
                 UpdatePropagation = SubPart;
                 Editable = true;
 
-
-                SubPageLink = "Oel No." = field("No.");
-                SubPageView = sorting("Document No", "Line No.") order(ascending);
-
-
+                SubPageLink = "Document no" = field("No.");
+                // SubPageView = sorting("Document No", "Line No.") order(ascending);
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action("My report")
+            {
+                ApplicationArea = All;
+                RunObject = report "Oel order confimation";
+                Image = "1099Form";
+
+                trigger OnAction()
+                begin
+
+                end;
+            }
+        }
+    }
+
 }
