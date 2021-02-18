@@ -9,7 +9,7 @@
             "server": "http://kursus:7049",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 22,
+            "startupObjectId": 50226,
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,

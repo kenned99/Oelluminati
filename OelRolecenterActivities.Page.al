@@ -33,6 +33,11 @@ page 50227 "OelRolecenterActivities"
                         ApplicationArea = all;
                         DrillDownPageId = "Oel List";
                     }
+                    field("Oel Genre"; "Oel Genre")
+                    {
+                        ApplicationArea = all;
+                        DrillDownPageId = OelGenreList;
+                    }
                 }
             }
         }

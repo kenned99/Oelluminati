@@ -62,7 +62,10 @@ report 50226 "Oel order confimation"
 
     trigger OnPostReport()
     var
+        SMTPMailSetup_loc: Record "SMTP Mail Setup";
+        SMTPMail_loc: Codeunit "SMTP Mail";
     begin
+        // SMTPMail_loc.CreateMessage('Kenneth', 'kej@cornator.com', 'kenneth_jensen_99@hotmail.com', 'Test', 'Haj', true);
     end;
 
 }

@@ -8,9 +8,21 @@ table 50230 "Oel line"
         }
         field(2; "Line No."; Integer)
         {
+            AutoIncrement = true;
         }
         field(3; "Oel No."; code[20])
         {
+            TableRelation = Oel.No;
+            trigger OnValidate()
+            var
+                OelCustomer_loc: Record OelCustomer;
+                Oel_loc: Record Oel;
+            begin
+                "Line Sum" := "Price (LCY)" * "Line Unit";
+                "Oel Title" := Oel_loc.Title;
+                "Price (LCY)" := Oel_loc."Price (LCY)";
+            end;
+
         }
         field(4; "Oel Title"; text[100])
         {
@@ -26,6 +38,12 @@ table 50230 "Oel line"
         }
         field(8; "Line Unit"; Integer)
         {
+            trigger OnValidate()
+            var
+            // OelCustomer_loc: Record OelCustomer;
+            begin
+                "Line Sum" := "Price (LCY)" * "Line Unit";
+            end;
         }
         field(9; "Oel Customer"; code[20])
         {

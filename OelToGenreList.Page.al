@@ -1,4 +1,4 @@
-page 50235 "OelToGenre"
+page 50235 "OelToGenre List"
 {
     ApplicationArea = All;
     Caption = 'OelToGenre';
@@ -12,11 +12,11 @@ page 50235 "OelToGenre"
         {
             repeater(General)
             {
-                field("Genre Desc."; Rec."Genre Desc.")
+                field("Genre No."; Rec."Genre No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Genre No."; Rec."Genre No.")
+                field("Genre Desc."; Rec."Genre Desc.")
                 {
                     ApplicationArea = All;
                 }

@@ -4,7 +4,7 @@ table 50228 "Oel Genre"
 
     fields
     {
-        field(1; "No"; Integer)
+        field(1; "No"; Code[20])
         {
         }
         field(2; "desc"; Text[50])

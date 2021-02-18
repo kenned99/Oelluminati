@@ -32,6 +32,7 @@ table 50229 "Oel"
         }
         field(10; "Picture"; Blob)
         {
+            Subtype = Bitmap;
         }
         field(11; "Price (LCY)"; Decimal)
         {
@@ -39,6 +40,7 @@ table 50229 "Oel"
         field(12; "Average Stars"; Decimal)
         {
         }
+
     }
 
     keys
@@ -48,4 +50,13 @@ table 50229 "Oel"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        NoSeriesManagement_loc: Codeunit NoSeriesManagement;
+    begin
+
+        IF "No" = '' THEN
+            No := NoSeriesManagement_loc.GetNextNo('OELNO', WorkDate(), true);
+    end;
 }

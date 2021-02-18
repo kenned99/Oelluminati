@@ -2,9 +2,32 @@ table 50231 "Oel Header"
 {
     fields
     {
-        field(1; "No."; Code[20]) { }
+        field(1; "No."; Code[20])
+        {
+        }
         field(2; "Type"; Code[20]) { }
-        field(3; "Sell-To-Customer No."; Code[20]) { }
+        field(3; "Sell-To-Customer No."; Code[20])
+        {
+            TableRelation = OelCustomer."No.";
+
+            trigger OnValidate()
+            var
+                OelCustomer_loc: Record OelCustomer;
+            begin
+                OelCustomer_loc.Get("Sell-To-Customer No.");
+                "Full Name" := OelCustomer_loc."Full Name";
+                Address := OelCustomer_loc.adress;
+                "Address 2" := OelCustomer_loc."Adress 2";
+                "Phone No." := OelCustomer_loc."Phone No";
+                "Language Code" := OelCustomer_loc."Language Code";
+                Website := OelCustomer_loc.Website;
+                "Country/Region Code" := OelCustomer_loc."Country/Region Code";
+                City := OelCustomer_loc.City;
+                "Post Code" := OelCustomer_loc."Post code";
+                Birthday := OelCustomer_loc.Birthday;
+                Email := OelCustomer_loc.Email;
+            end;
+        }
         field(4; "Full Name"; Text[50]) { }
         field(5; "Address"; Text[50]) { }
         field(6; "Address 2"; Text[50]) { }
@@ -43,4 +66,14 @@ table 50231 "Oel Header"
             Clustered = true;
         }
     }
+
+    trigger OnInsert()
+    var
+        NoSeriesManagement_loc: Codeunit NoSeriesManagement;
+    begin
+
+        IF "No." = '' THEN
+            "No." := NoSeriesManagement_loc.GetNextNo('OELHEADER', WorkDate(), true);
+    end;
+
 }

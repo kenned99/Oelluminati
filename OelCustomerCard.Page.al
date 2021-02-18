@@ -65,10 +65,10 @@ page 50229 "Oel Customer Card"
                 {
                     ApplicationArea = All;
                 }
-                field("Posted Order Amount"; Rec."Posted Order Amount")
-                {
-                    ApplicationArea = All;
-                }
+                /* field("Posted Order Amount"; Rec."Posted Order Amount")
+                 {
+                     ApplicationArea = All;
+                 }*/
                 field(Birthday; Rec.Birthday)
                 {
                     ApplicationArea = All;

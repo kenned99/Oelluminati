@@ -39,6 +39,7 @@ page 50237 "Oel Card"
                 field("Genre No."; Rec."Genre No.")
                 {
                     ApplicationArea = All;
+                    DrillDownPageId = "OelToGenre List";
                 }
                 field("Price (LCY)"; Rec."Price (LCY)")
                 {

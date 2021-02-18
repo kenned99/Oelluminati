@@ -6,6 +6,7 @@ page 50236 "Oel List"
     PageType = List;
     SourceTable = Oel;
     UsageCategory = Administration;
+    CardPageId = "Oel Card";
 
     layout
     {
