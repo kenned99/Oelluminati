@@ -23,6 +23,16 @@ page 50227 "OelRolecenterActivities"
                         ApplicationArea = all;
                         DrillDownPageId = "oel line list";
                     }
+                    field("Oel Customer"; "Oel Customer")
+                    {
+                        ApplicationArea = all;
+                        DrillDownPageId = "OelCustomerList";
+                    }
+                    field(Oel; Oel)
+                    {
+                        ApplicationArea = all;
+                        DrillDownPageId = "Oel List";
+                    }
                 }
             }
         }

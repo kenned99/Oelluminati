@@ -16,6 +16,7 @@ table 50229 "Oel"
         }
         field(5; "Genre No."; Code[20])
         {
+            TableRelation = OelToGenre."Genre No.";
         }
         field(6; Inventory; Integer)
         {
