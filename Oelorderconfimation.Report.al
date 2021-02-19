@@ -47,7 +47,7 @@ report 50226 "Oel order confimation"
             {
             }
 
-            trigger OnAfterGetRecord()
+            trigger OnPreDataItem()
             begin
                 SetRange("Oel line"."Document no", "Oel Header"."No.");
             end;

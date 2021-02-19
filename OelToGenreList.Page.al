@@ -1,7 +1,7 @@
 page 50235 "OelToGenre List"
 {
     ApplicationArea = All;
-    Caption = 'OelToGenre';
+    Caption = 'Øl til genre';
     PageType = List;
     SourceTable = OelToGenre;
     UsageCategory = Administration;
@@ -31,4 +31,11 @@ page 50235 "OelToGenre List"
             }
         }
     }
+    trigger OnOpenPage()
+    var
+        oel_loc: Record Oel;
+    begin
+        //   Movie_loc.SETRANGE(Genre, Rec."Movie No.");
+        oel_loc.SetRange(No, Rec."Oel No.");
+    end;
 }

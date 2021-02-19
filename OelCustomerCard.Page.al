@@ -85,6 +85,10 @@ page 50229 "Oel Customer Card"
                 {
                     ApplicationArea = All;
                 }
+                field(Picture; Picture)
+                {
+                    ApplicationArea = all;
+                }
             }
         }
     }

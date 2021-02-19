@@ -40,6 +40,7 @@ table 50232 "OelCustomer"
         }
         field(13; "Picture"; Blob)
         {
+            Subtype = Bitmap;
         }
         /*field(14; "Balance (LCY)"; code[20])
         {
@@ -82,15 +83,4 @@ table 50232 "OelCustomer"
         "Modified by" := UserId;
         "Last Date modifyed" := Today;
     end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 }

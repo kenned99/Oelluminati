@@ -4,7 +4,7 @@ page 50230 "Oel Header List"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Oel Header";
-    CardPageId = "Document Oel Header";
+    CardPageId = "Document Oel Header card";
 
     layout
     {
@@ -63,6 +63,10 @@ page 50230 "Oel Header List"
                 field(Birthday; Rec.Birthday)
                 {
                     ApplicationArea = All;
+                }
+                field(Done; Done)
+                {
+                    ApplicationArea = all;
                 }
             }
         }

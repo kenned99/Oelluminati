@@ -17,7 +17,11 @@ table 50230 "Oel line"
             var
                 OelCustomer_loc: Record OelCustomer;
                 Oel_loc: Record Oel;
+                OelHeader_loc: Record "Oel Header";
             begin
+                Oel_loc.Get("Oel No.");
+                Oel_loc.SetRange(No, "Oel No.");
+                //SetRange("Oel No.", Oel_loc.No);
                 "Line Sum" := "Price (LCY)" * "Line Unit";
                 "Oel Title" := Oel_loc.Title;
                 "Price (LCY)" := Oel_loc."Price (LCY)";
@@ -69,4 +73,15 @@ table 50230 "Oel line"
             Clustered = true;
         }
     }
+    /* trigger OnInsert()
+     var
+         Oel_loc: Record Oel;
+     begin
+         SetRange("Oel No.", Oel_loc.No);
+         "Line Sum" := "Price (LCY)" * "Line Unit";
+         "Oel Title" := Oel_loc.Title;
+         "Price (LCY)" := Oel_loc."Price (LCY)";
+     end;
+ */
+
 }

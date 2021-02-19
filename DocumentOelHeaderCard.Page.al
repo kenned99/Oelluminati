@@ -1,4 +1,4 @@
-page 50231 "Document Oel Header"
+page 50231 "Document Oel Header Card"
 {
     Caption = 'Sales Order Header';
     PageType = Document;
@@ -64,6 +64,14 @@ page 50231 "Document Oel Header"
                 field(Birthday; Rec.Birthday)
                 {
                     ApplicationArea = All;
+                }
+                /*    field("Sum total"; "Sum total")
+                    {
+                        ApplicationArea = all;
+                    }*/
+                field(Done; Done)
+                {
+                    ApplicationArea = all;
                 }
             }
             part(Lines; "Oel Subform")

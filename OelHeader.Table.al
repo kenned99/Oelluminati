@@ -46,7 +46,6 @@ table 50231 "Oel Header"
             CalcFormula = lookup("Discount"."Discount Percent"
             WHERE("No." = FIELD("No.")));
         }*/
-        field(17; Rented; Integer) { }
         field(18; Exceeded; Integer) { }
         field(19; "Creation Date"; Date) { }
         field(20; "Shipment Date"; Date) { }
@@ -54,8 +53,30 @@ table 50231 "Oel Header"
         field(22; "Modified By"; Code[50]) { }
         field(23; "Comment"; Text[100]) { }
         field(24; "VAT %"; Decimal) { }
-        field(25; "Total Excl. VAT"; Decimal) { }
-        field(26; "Total Incl. VAT"; Decimal) { }
+        //  field(25; "Total Excl. VAT"; Decimal) { }
+        // field(26; "Total Incl. VAT"; Decimal) { }
+        field(30; Done; Boolean) { }
+        field(31; "Sum total"; Decimal)
+        {
+            trigger OnValidate()
+            var
+                OelCustomer_loc: Record OelCustomer;
+                Oel_loc: Record Oel;
+                OelHeader_loc: Record "Oel Header";
+                OelLine_loc: Record "Oel line";
+            begin
+                //   Rec.SetRange("No.", OelLine_loc."Document no");
+                //OelLine_loc.SetRange("Document no", Rec."No.");
+                OelLine_loc.Get("No.");
+                OelLine_loc.SetRange("Document no", Rec."No.");
+                IF OelLine_loc.FindSet() then
+                    repeat
+                        OelHeader_loc.init();
+                        OelHeader_loc.Validate("Sum total", OelLine_loc."Line Sum");
+                        OelHeader_loc.Modify(true);
+                    until OelLine_loc.Next() = 0;
+            end;
+        }
 
     }
 
@@ -76,4 +97,19 @@ table 50231 "Oel Header"
             "No." := NoSeriesManagement_loc.GetNextNo('OELHEADER', WorkDate(), true);
     end;
 
+    /* trigger OnModify()
+     var
+         OelCustomer_loc: Record OelCustomer;
+         Oel_loc: Record Oel;
+         OelHeader_loc: Record "Oel Header";
+         OelLine_loc: Record "Oel line";
+     begin
+         OelLine_loc.SetRange("Document no", "No.");
+         IF OelLine_loc.FindSet() then
+             repeat
+                 //OelHeader_loc.init;
+                 OelHeader_loc."Sum total" += OelLine_loc."Line Sum";
+             //OelHeader_loc.Insert(true);
+             until OelLine_loc.Next() = 0;
+     end;*/
 }

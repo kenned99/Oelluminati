@@ -2,7 +2,7 @@ page 50237 "Oel Card"
 {
     ApplicationArea = all;
     UsageCategory = Administration;
-    Caption = 'Oel Card';
+    Caption = 'Øl kort';
     PageType = Card;
     SourceTable = Oel;
 
